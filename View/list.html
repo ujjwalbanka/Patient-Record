@@ -1,0 +1,37 @@
+<div class="table-view col-md-12 col-xs-12" ng-init="list()">
+    <div class="col-md-12 col-xs-12">
+        <div class="col-md-6 col-xs-12 inner-bottom">
+            Search : <input type="text" class="search-input" name="" value="" ng-model="searchText">
+        </div>
+        <div class="col-md-6 col-xs-12 text-right inner-bottom">
+            <button type="button" name="button" class="list-input" ng-click="go('/')">Home</button>
+            <button type="button" name="button" class="list-input" ng-click="go('/input')">Input Data</button>
+        </div>
+    </div>
+    <div class="col-md-12 col-xs-12 scroll table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Age</th>
+                    <th>Date Of Birth</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in recorddata | filter:searchText">
+                    <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                    <td>{{ x.age }}</td>
+                    <td>{{ x.dob | date : 'shortDate'}}</td>
+                    <td>{{ x.phone }}</td>
+                    <td>{{ x.gender }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+</div>

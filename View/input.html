@@ -1,0 +1,34 @@
+<div class="form-input">
+    <form validate name="form" ng-submit="submit()">
+        <div ng-init="setForm(form);"></div>
+        <div class="form_wrap">
+            <div class="col-md-12 col-xs-12 inner-bottom">
+                <div class="text-left col-xs-6 col-md-6 input-btn">
+                    <button type="button" name="button" ng-click="go('/')">← Home</button>
+                </div>
+                <div class="text-right col-md-6 col-xs-6 input-btn">
+                    <button type="button" name="button" ng-click="go('/list')">List →</button>
+                </div>
+            </div>
+            <input type="text" name="firstname" placeholder="First Name" ng-model="user.firstname" ng-required="true" ng-minlength="2" />
+            <p class="error" ng-show="form.firstname.$invalid && form.firstname.$touched"> Please, enter your first name</p>
+            <input type="text" name="lastname" ng-model="user.lastname" placeholder="Last Name" ng-required="true" />
+            <p class="error" ng-show="form.lastname.$invalid && form.lastname.$touched"> Please, enter your last name</p>
+            <input type="number" name="age" ng-model="user.age" placeholder="Age" ng-required="true" ng-maxlength="5" ng-minlength="1" />
+            <p class="error" ng-show="form.age.$invalid && form.age.$touched"> Please, enter your Age</p>
+            <input type="date" name="dob" placeholder="Date Of Birth" ng-model="user.dob" ng-required="true" value='1212-11-11' />
+            <p class="error" ng-show="form.dob.$invalid && form.dob.$touched"> Please, enter correct Date of Birth</p>
+            <input type="number" name="phn" ng-model="user.phn" placeholder="Phone Number" ng-required="true" ng-maxlength="10" ng-minlength="10" />
+            <p class="error" ng-show="form.phn.$invalid && form.phn.$touched"> Please, enter 10-digit Phone Number</p>
+            <select class="" name="gender" ng-model="user.gender" required>
+              <option value="" selected="selected">Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <p class="error" ng-show="form.gender.$invalid && form.gender.$touched"> Please, select correct option</p>
+        </div>
+        <div class="submit">
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
